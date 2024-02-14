@@ -18,25 +18,20 @@ class HomePage extends StatelessWidget {
       'https://d36tnp772eyphs.cloudfront.net/blogs/1/2019/09/Taj-Mahal-1200x849.jpg',
       'https://th.bing.com/th/id/R.20ed9ad1b5dedcd848293191595b19fc?rik=yVGXA7e7shDJKA&riu=http%3a%2f%2f1.bp.blogspot.com%2f-pvtXgeafeIM%2fUQgNer8SWeI%2fAAAAAAAAjq8%2fUc8kd039seU%2fs1600%2feiffil-tower-eiffel-paris-france-park-cities-269184.jpg&ehk=JNzB3Rs1WjNHbZIGh4YwvyCK4mtgTK47gmTCzsvKCEA%3d&risl=&pid=ImgRaw&r=0',
       'https://i1.wp.com/handluggageonly.co.uk/wp-content/uploads/2015/05/Hand-Luggage-Only-7.jpg?fit=1600%2C1067&ssl=1',
-      
-     
-     
-     
+      'https://4.bp.blogspot.com/_e90BZrQRlsA/TJsVAtZE7DI/AAAAAAAAAQQ/TltjYEae5WU/s1600/Tower_Bridge.jpg',
+      'https://th.bing.com/th/id/R.9ba4f508bee3fcea5a3414b2bfcc3924?rik=Br7G3n8Ko4a66w&riu=http%3a%2f%2fstatic1.businessinsider.com%2fimage%2f55d34a70371d22ce178c0747%2fthe-10-best-tourist-attractions-in-the-world-according-to-lonely-planet.jpg&ehk=K4ZD8Po%2blS0NZeFZXytxXzbA6ysQOGK24ribUsyyoPg%3d&risl=&pid=ImgRaw&r=0',
+      'https://th.bing.com/th/id/R.be45b55d73734a42e2c380e3169eaf44?rik=7c7GLipna8jLyA&riu=http%3a%2f%2fwww.inviul.com%2fwp-content%2fuploads%2f2017%2f10%2f10-travel-destinations.jpg&ehk=zqoRHP%2fKXKVHD0LUhgYLaTr55WyF1QJkVrWSN%2f7TZEE%3d&risl=&pid=ImgRaw&r=0&sres=1&sresct=1'
       
     ];
-    List<String> discription = [
-      'tajmahal',
-      'effel Tower',
-      'greece'
-    ];
-   
+    List<String> discription = ['TajMSahal', 'Effel Tower', 'greece','London', 'Machupichu', 'USA',];
 
     return Scaffold(
       body: Padding(
         padding: const EdgeInsets.all(8.0),
         child: Column(
           children: [
-            const Row(mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            const Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
                 Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
@@ -56,8 +51,10 @@ class HomePage extends StatelessWidget {
                       ),
                     ),
                   ],
-                ),CircleAvatar(
-                  backgroundImage: NetworkImage('https://th.bing.com/th/id/OIP.knVqMW37aRYuhxId096m4wAAAA?pid=ImgDet&w=182&h=182&c=7&dpr=1.3'),
+                ),
+                CircleAvatar(
+                  backgroundImage: NetworkImage(
+                      'https://th.bing.com/th/id/OIP.knVqMW37aRYuhxId096m4wAAAA?pid=ImgDet&w=182&h=182&c=7&dpr=1.3'),
                 )
               ],
             ),
@@ -96,34 +93,27 @@ class HomePage extends StatelessWidget {
                 child: GridView.builder(
                   gridDelegate: const SliverGridDelegateWithMaxCrossAxisExtent(
                     maxCrossAxisExtent: 200,
-                    childAspectRatio: 1/ 1,
+                    childAspectRatio: 1 / 1,
                     mainAxisSpacing: 10.0,
                     crossAxisSpacing: 10.0,
                   ),
                   itemCount: pictures.length,
                   itemBuilder: (context, index) {
                     return Column(
-                      children: [ 
+                      children: [
                         Container(
-                          
-                            alignment: Alignment.center,
-                            decoration: BoxDecoration(
-                             color: Colors.transparent,
-                        
-                              borderRadius: BorderRadius.circular(15),
-                              
-                            ),
-                        
-                            child: Image.network(
-                                pictures[index],),
-                              
-                                
-                                
+                          alignment: Alignment.center,
+                          decoration: BoxDecoration(
+                            color: Colors.transparent,
+                            borderRadius: BorderRadius.circular(15),
+                          ),
+                          child: Image.network(
+                            pictures[index],
+                          ),
                         ),
                         Text(discription[index]),
                       ],
                     );
-                        
                   },
                 ),
               ),
